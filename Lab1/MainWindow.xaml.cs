@@ -54,9 +54,9 @@ namespace Lab1
         {
             switch (fromUnit.ToLower())
             {
-                case "милиграмм": return value / 1000;
+                case "миллиграмм": return value / 1000;
                 case "грамм": return value;
-                case "колограмм": return value * 1000;
+                case "килограмм": return value * 1000;
                 case "центнер": return value * 100000;
                 case "тонн": return value * 1000000;
                 default: return value;
@@ -67,9 +67,9 @@ namespace Lab1
         {
             switch (toUnit.ToLower())
             {
-                case "милиграмм": return value * 1000;
+                case "миллиграмм": return value * 1000;
                 case "грамм": return value;
-                case "колограмм": return value / 1000;
+                case "килограмм": return value / 1000;
                 case "центнер": return value / 100000;
                 case "тонн": return value / 1000000;
                 default: return value;

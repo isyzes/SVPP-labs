@@ -54,9 +54,9 @@
                   Height="25"
          
                   SelectionChanged="FromUnit_SelectionChanged" HorizontalAlignment="Center"  >
-            <ComboBoxItem Content="милиграмм"/>
+            <ComboBoxItem Content="миллиграмм"/>
             <ComboBoxItem Content="грамм"/>
-            <ComboBoxItem Content="колограмм"/>
+            <ComboBoxItem Content="килограмм"/>
             <ComboBoxItem Content="центнер"/>
             <ComboBoxItem Content="тонн"/>
         </ComboBox>
@@ -82,9 +82,9 @@
                   Height="25"
                   SelectionChanged="FromUnit_SelectionChanged" 
                   HorizontalAlignment="Center"  >
-            <ComboBoxItem Content="милиграмм"/>
+            <ComboBoxItem Content="миллиграмм"/>
             <ComboBoxItem Content="грамм"/>
-            <ComboBoxItem Content="колограмм"/>
+            <ComboBoxItem Content="килограмм"/>
             <ComboBoxItem Content="центнер"/>
             <ComboBoxItem Content="тонн"/>
         </ComboBox>
