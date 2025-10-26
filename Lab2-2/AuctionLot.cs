@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Lab2
+namespace Lab2_2
 {
     public enum LotCategory
     {
@@ -15,11 +15,12 @@ namespace Lab2
 
     public enum LotStatus
     {
-        Draft,        // Черновик
-        UnderReview,  // На проверке
-        Approved,     // Одобрен
-        Rejected      // Отклонен
+        Черновик,
+        На_проверке,
+        Одобрен,
+        Отклонен
     }
+
     public class AuctionLot
     {
         public string Title { get; set; }

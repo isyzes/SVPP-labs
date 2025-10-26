@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace Lab2
+namespace Lab2_2
 {
     /// <summary>
     /// Interaction logic for App.xaml

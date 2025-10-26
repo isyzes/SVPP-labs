@@ -5,30 +5,22 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
-namespace Lab2
+
+namespace Lab2_2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private AuctionLot carrentLot;
-
         public MainWindow()
         {
-            this.carrentLot = new AuctionLot();
-            this.carrentLot.ImagePath = "/Images/placeholder.png";
-
-            this.carrentLot.Title = "Title";
-            this.carrentLot.Category = LotCategory.Antique;
-            this.carrentLot.IsVerified = true;
-            this.carrentLot.IsUrgent = true;
-            this.carrentLot.Status = LotStatus.Draft;
-            this.carrentLot.StartDate = new DateTime(2025, 09, 01);
-            this.carrentLot.EndDate = new DateTime(2025, 09, 14);
-            this.carrentLot.StartPrice = 1000;
-
             InitializeComponent();
+
+            foreach (LotStatus status in Enum.GetValues(typeof(LotStatus)))
+            {
+                cmbStatus.Items.Add(status);
+            }
 
             sldStartPrice.ValueChanged += (s, e) => tbPriceValue.Text = sldStartPrice.Value.ToString("C0");
         }
@@ -68,24 +60,22 @@ namespace Lab2
             }
         }
 
-        private void Category_Checked(object sender, RoutedEventArgs e)
-        {
-            // Логика выбора категории
-        }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             AuctionLot lot = new AuctionLot
             {
                 Title = txtTitle.Text,
-                //Category = rbArt.IsChecked == true ? "Искусство" :
-                //          rbJewelry.IsChecked == true ? "Ювелирные изделия" : "Антиквариат",
+                Category = rbArt.IsChecked == true ? LotCategory.Art :
+                          rbJewelry.IsChecked == true ? LotCategory.Jewelry : LotCategory.Antique,
                 IsVerified = chkVerified.IsChecked == true,
                 IsUrgent = chkUrgent.IsChecked == true,
-                //Status = (cmbStatus.SelectedItem as ComboBoxItem)?.Content.ToString(),
+                Status = (LotStatus)cmbStatus.SelectedValue,
                 StartDate = dpStartDate.SelectedDate,
                 EndDate = dpEndDate.SelectedDate,
+                ImagePath = lotImage.Source.ToString(),
                 StartPrice = sldStartPrice.Value
+
             };
 
             SaveFileDialog saveDialog = new SaveFileDialog
@@ -116,21 +106,20 @@ namespace Lab2
 
                 // Заполнение полей формы
                 txtTitle.Text = lot.Title;
-                //switch (lot.Category)
-                //{
-                //    case "Искусство": rbArt.IsChecked = true; break;
-                //    case "Ювелирные изделия": rbJewelry.IsChecked = true; break;
-                //    case "Антиквариат": rbAntique.IsChecked = true; break;
-                //}
+                switch (lot.Category)
+                {
+                    case LotCategory.Art: rbArt.IsChecked = true; break;
+                    case LotCategory.Jewelry: rbJewelry.IsChecked = true; break;
+                    case LotCategory.Antique: rbAntique.IsChecked = true; break;
+                }
                 chkVerified.IsChecked = lot.IsVerified;
                 chkUrgent.IsChecked = lot.IsUrgent;
-                //cmbStatus.Text = lot.Status;
+                cmbStatus.SelectedItem = lot.Status;
                 dpStartDate.SelectedDate = lot.StartDate;
                 dpEndDate.SelectedDate = lot.EndDate;
                 sldStartPrice.Value = lot.StartPrice;
+                lotImage.Source = new BitmapImage(new Uri(lot.ImagePath, UriKind.RelativeOrAbsolute));
             }
         }
     }
-
-    
 }
