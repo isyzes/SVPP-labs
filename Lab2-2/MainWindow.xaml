@@ -11,49 +11,114 @@
             <ImageBrush ImageSource="/Images/background.jpg"/>
         </Canvas.Background>
         <!-- Заголовок -->
-        <TextBlock Canvas.Left="20" Canvas.Top="20" Text="Карточка лота" FontSize="20" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="20" 
+                   Canvas.Top="20" 
+                   Text="Карточка лота" 
+                   FontSize="20" 
+                   FontWeight="Bold"/>
 
         <!-- Название лота -->
-        <TextBlock Canvas.Left="20" Canvas.Top="70" Text="Название лота:"/>
-        <TextBox x:Name="txtTitle" Canvas.Left="120" Canvas.Top="65" Width="200" Height="25"/>
+        <TextBlock Canvas.Left="20" 
+                   Canvas.Top="70" 
+                   Text="Название лота:"/>
+        <TextBox x:Name="txtTitle" 
+                 Canvas.Left="120" 
+                 Canvas.Top="65" 
+                 Width="200" 
+                 Height="25"/>
 
         <!-- Изображение -->
-        <Image x:Name="lotImage" Canvas.Left="400" Canvas.Top="65" Width="150" Height="150" Source="/Images/placeholder.png"/>
-        <Button x:Name="btnLoadImage" Canvas.Left="400" Canvas.Top="225" Content="Загрузить изображение" Click="BtnLoadImage_Click"/>
+        <Image x:Name="lotImage" 
+               Canvas.Left="400" 
+               Canvas.Top="65" 
+               Width="150" 
+               Height="150" 
+               Source="/Images/placeholder.png"/>
+        <Button x:Name="btnLoadImage" 
+                Canvas.Left="400" 
+                Canvas.Top="225" 
+                Content="Загрузить изображение" 
+                Click="BtnLoadImage_Click"/>
 
         <!-- Группа с категориями -->
-        <GroupBox Header="Категория" Canvas.Left="20" Canvas.Top="110" Width="300" Height="100">
+        <GroupBox Header="Категория" 
+                  Canvas.Left="20" 
+                  Canvas.Top="110" 
+                  Width="300" 
+                  Height="100">
             <StackPanel>
-                <RadioButton x:Name="rbArt" Content="Искусство" GroupName="Category" />
-                <RadioButton x:Name="rbJewelry" Content="Ювелирные изделия" GroupName="Category" />
-                <RadioButton x:Name="rbAntique" Content="Антиквариат" GroupName="Category" />
+                <RadioButton x:Name="rbArt" 
+                             Content="Искусство" 
+                             GroupName="Category" />
+                <RadioButton x:Name="rbJewelry" 
+                             Content="Ювелирные изделия" 
+                             GroupName="Category" />
+                <RadioButton x:Name="rbAntique" 
+                             Content="Антиквариат" 
+                             GroupName="Category" />
             </StackPanel>
         </GroupBox>
 
         <!-- Детали -->
-        <Expander Header="Дополнительные details" Canvas.Left="20" Canvas.Top="220" Width="300">
+        <Expander Header="Дополнительные" 
+                  Canvas.Left="20" 
+                  Canvas.Top="220" 
+                  Width="300">
             <StackPanel>
-                <CheckBox x:Name="chkVerified" Content="Проверенный лот"/>
-                <CheckBox x:Name="chkUrgent" Content="Срочный аукцион"/>
+                <CheckBox x:Name="chkVerified" 
+                          Content="Проверенный лот"/>
+                <CheckBox x:Name="chkUrgent" 
+                          Content="Срочный аукцион"/>
             </StackPanel>
         </Expander>
 
         <!-- Статус -->
-        <TextBlock Canvas.Left="20" Canvas.Top="320" Text="Статус:"/>
-        <ComboBox x:Name="cmbStatus" Canvas.Left="120" Canvas.Top="315" Width="120" Height="25"/>
+        <TextBlock Canvas.Left="20" 
+                   Canvas.Top="320" 
+                   Text="Статус:"/>
+        <ComboBox x:Name="cmbStatus" 
+                  Canvas.Left="120" 
+                  Canvas.Top="315" 
+                  Width="120" 
+                  Height="25"/>
 
         <!-- Даты Header="Дата начала"  Header="Дата окончания" -->
-        <DatePicker x:Name="dpStartDate" Canvas.Left="20" Canvas.Top="360" Width="150"/>
-        <DatePicker x:Name="dpEndDate" Canvas.Left="180" Canvas.Top="360" Width="150"/>
+        <DatePicker x:Name="dpStartDate" 
+                    Canvas.Left="20" 
+                    Canvas.Top="360" 
+                    Width="150"/>
+        <DatePicker x:Name="dpEndDate" 
+                    Canvas.Left="180" 
+                    Canvas.Top="360" 
+                    Width="150"/>
 
         <!-- Стартовая цена -->
-        <TextBlock Canvas.Left="20" Canvas.Top="410" Text="Стартовая цена:"/>
-        <Slider x:Name="sldStartPrice" Canvas.Left="120" Canvas.Top="410" Width="200" 
-                Minimum="0" Maximum="100000" TickFrequency="1000" IsSnapToTickEnabled="True"/>
-        <TextBlock x:Name="tbPriceValue" Canvas.Left="330" Canvas.Top="410" Text="0"/>
+        <TextBlock Canvas.Left="20" 
+                   Canvas.Top="410" 
+                   Text="Стартовая цена:"/>
+        <Slider x:Name="sldStartPrice" 
+                Canvas.Left="120" 
+                Canvas.Top="410" 
+                Width="200" 
+                Minimum="0" 
+                Maximum="100000" 
+                TickFrequency="1000" 
+                IsSnapToTickEnabled="True"/>
+        <TextBlock x:Name="tbPriceValue" 
+                   Canvas.Left="330" 
+                   Canvas.Top="410" 
+                   Text="0"/>
 
         <!-- Кнопки действий -->
-        <Button x:Name="btnSave" Canvas.Left="20" Canvas.Top="470" Content="Сохранить" Click="BtnSave_Click"/>
-        <Button x:Name="btnLoad" Canvas.Left="120" Canvas.Top="470" Content="Загрузить" Click="BtnLoad_Click"/>
+        <Button x:Name="btnSave" 
+                Canvas.Left="20" 
+                Canvas.Top="470" 
+                Content="Сохранить" 
+                Click="BtnSave_Click"/>
+        <Button x:Name="btnLoad" 
+                Canvas.Left="120" 
+                Canvas.Top="470" 
+                Content="Загрузить"
+                Click="BtnLoad_Click"/>
     </Canvas>
 </Window>
