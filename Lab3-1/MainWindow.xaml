@@ -58,7 +58,7 @@
         </Grid.ColumnDefinitions>
         <Label Content="Водительская лицензия" Grid.Column="1" Grid.ColumnSpan="2" 
                HorizontalAlignment="Center" FontSize="36" FontFamily="Times New Roman" 
-               Foreground="WhiteSmoke"/>
+               Foreground="Black"/>
         <Image x:Name="image" Source="{Binding UriImage, Converter={StaticResource imageConverter}}" MouseDown="Image_MouseDown" Grid.RowSpan="6" Margin="20"/>
         <TextBox x:Name="textBoxName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" 
                  FontSize="16" Margin="12" FontWeight="Bold" 

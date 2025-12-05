@@ -133,7 +133,7 @@ namespace Lab3_1
             comboBoxEyes.SelectedIndex = -1;
             checkBoxDonor.IsChecked = false;
             sliderHGT.Value = sliderHGT.Minimum;
-            image.Source = new BitmapImage(new Uri("/Images/background.jpg", UriKind.Relative));
+            image.Source = new BitmapImage(new Uri("/Images/placeholder.png", UriKind.Relative));
             driver = new Driver();
             grid.DataContext = driver;
 

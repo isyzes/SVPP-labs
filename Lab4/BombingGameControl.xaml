@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Lab4.BombingGameControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Lab4"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600"
+             Background="LightBlue">
+    <Canvas x:Name="GameCanvas" MouseLeftButtonDown="GameCanvas_MouseLeftButtonDown">
+        <Rectangle Canvas.Left="0" Canvas.Top="350" Width="600" Height="50" Fill="Green"/>
+
+        <Rectangle x:Name="Target" Canvas.Left="500" Canvas.Top="340" Width="30" Height="10" Fill="Red"/>
+
+        <Ellipse x:Name="Explosion" Canvas.Left="0" Canvas.Top="0" Width="0" Height="0" Fill="Orange" Opacity="0"/>
+    </Canvas>
+</UserControl>
