@@ -1,0 +1,49 @@
+﻿<Window x:Class="Lab6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab6"
+        mc:Ignorable="d"
+        Title="Вычисление интеграла" Height="500" Width="700">
+    <Window.Resources>
+        <ComponentModel:BackgroundWorker x:Key="MyBackgroundWorker"
+                                     xmlns:ComponentModel="clr-namespace:System.ComponentModel;assembly=System"
+                                     WorkerReportsProgress="True"
+                                     WorkerSupportsCancellation="False"
+                                     DoWork="BackgroundWorker_DoWork"
+                                     ProgressChanged="BackgroundWorker_ProgressChanged"
+                                     RunWorkerCompleted="BackgroundWorker_RunWorkerCompleted"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель параметров -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <TextBlock Text="Параметры: " VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBlock x:Name="ParamsInfoText" Text="a=0, b=1, N=1000" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <Button x:Name="ButtonParams" Content="Изменить параметры" Width="120" Click="ButtonParams_Click"/>
+        </StackPanel>
+
+        <ProgressBar x:Name="ProgressBar" Grid.Row="1" Width="600" Height="20" Margin="10" Minimum="0" Maximum="100"/>
+
+        <!-- Кнопки методов -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="Button_Dispatcher" Content="Dispatcher" Width="120" Margin="5" Click="Button_Dispatcher_Click"/>
+            <Button x:Name="Button_BackgroundWorker" Content="BackgroundWorker" Width="120" Margin="5" Click="Button_BackgroundWorker_Click"/>
+            <Button x:Name="Button_AsyncStream" Content="Async Stream" Width="120" Margin="5" Click="Button_AsyncStream_Click"/>
+        </StackPanel>
+
+        <!-- ListBox для отображения хода вычислений -->
+        <ListBox x:Name="ResultsListBox" Grid.Row="3" Margin="10" Height="200"/>
+
+        <!-- Итоговый результат -->
+        <TextBlock x:Name="ResultTextBlock" Grid.Row="4" Text="Результат: " Margin="10" HorizontalAlignment="Center" FontWeight="Bold"/>
+    </Grid>
+</Window>

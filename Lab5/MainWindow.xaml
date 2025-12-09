@@ -53,11 +53,5 @@
                 </Rectangle.Triggers>
             </Rectangle>
         </Canvas>
-
-
-
-
-
-
     </DockPanel>
 </Window>
