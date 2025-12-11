@@ -10,7 +10,6 @@ namespace Lab8
     public partial class ServiceEditDialog : Window
     {
         public Service Service { get; private set; }
-        private bool _isEditMode;
 
         public ServiceEditDialog()
         {
@@ -20,7 +19,6 @@ namespace Lab8
                 RegistrationDate = DateTime.Now,
                 IsActive = true
             };
-            _isEditMode = false;
             DataContext = Service;
         }
 
@@ -29,7 +27,6 @@ namespace Lab8
             InitializeComponent();
             Service = new Service();
             CopyService(service, Service);
-            _isEditMode = true;
             DataContext = Service;
             Title = "Редактирование услуги";
         }
