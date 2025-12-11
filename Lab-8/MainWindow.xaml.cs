@@ -1,9 +1,7 @@
 ﻿using Lab_8.Models;
-using System.Configuration;
 using System.Data.Entity;
 using System.Windows;
 using System.Windows.Controls;
-using System.Xaml;
 
 
 namespace Lab8

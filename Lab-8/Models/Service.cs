@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Lab_8.Models
+﻿namespace Lab_8.Models
 {
     public class Service
     {
